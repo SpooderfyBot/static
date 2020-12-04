@@ -5,12 +5,6 @@ use std::net::SocketAddr;
 use serde::{Deserialize, Serialize};
 use chrono::Utc;
 
-use mimalloc::MiMalloc;
-
-
-#[global_allocator]
-static GLOBAL: MiMalloc = MiMalloc;
-
 
 #[tokio::main]
 async fn main() {

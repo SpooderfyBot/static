@@ -14,4 +14,3 @@ chrono = "0.4.19"
 
 serde = { version=  "1.0.117", features = ["derive"] }
 tokio = { version = "0.2", features = ["full"] }
-mimalloc = { version = "*", default-features = false}
