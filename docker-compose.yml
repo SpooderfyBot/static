@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  spooderfy_static:
+    build: .
+    container_name: spooderfy_static
+    image: spooderfy_static
+    restart: always
+    command: cargo run --release
+    volumes:
+      - .:/code
+    ports:
+    - "5052:5052"
