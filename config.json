@@ -1,0 +1,5 @@
+{
+  "server_host": "127.0.0.1:8888",
+  "static_file_dir": "./static",
+  "home_dir": "./templates/home.html"
+}
