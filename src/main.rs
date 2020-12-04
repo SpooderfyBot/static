@@ -1,5 +1,6 @@
 use warp::Filter;
-use std::{error, fs};
+use warp::http::Uri;
+use std::fs;
 use std::net::SocketAddr;
 use serde::{Deserialize, Serialize};
 use chrono::Utc;
@@ -17,16 +18,16 @@ async fn main() {
 
     let home = warp::get()
         .and(warp::path::end())
-        .and(warp::fs::file(&config.home_dir));
+        .map(|| warp::redirect(Uri::from_static("/home")));
 
     let home2 = warp::path("home")
-        .and(warp::fs::file(&config.home_dir));
+        .and(warp::fs::file(config.home_dir));
 
     let static_files = warp::path("static")
-        .and(warp::fs::dir(&config.static_file_dir));
+        .and(warp::fs::dir(config.static_file_dir));
 
     println!(
-        "[ {} ] Running @ ws://{}",
+        "[ {} ] Running @ http://{}",
         Utc::now().format("%D | %T"),
         &config.server_host
     );
