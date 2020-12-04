@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spooderfy | Room</title>
+	<meta content="#6C63FF" name="theme-color">
+    <meta content="https://images.discordapp.net/avatars/585225058683977750/635dfb482c9eb8aad28d4a8f64a7508a.png?size=512" property="og:image">
+    <meta content="Create movie nights like never before with Spooderfy."
+          name="description">
+
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" type="text/css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+
+<style>
+    body {
+        font-family: Inter var, system-ui, -apple-system, BlinkMacSystemFont,
+                         Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+                         Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        background-color: #161a29;
+    }
+	.bg-discord-dark {
+		background: #23272A;
+    }
+    .bg-discord-no-as-dark {
+        background: #2F3641;
+    }
+    .border-discord-dark {
+        border-color: #23272A;
+    }
+    .text-spoods-cyan {
+        color: #00ffe7;
+    }
+    .text-spoods-purple {
+        color: #7161EF;
+    }
+    .border-spoods-purple-hover:hover {
+        border-color: #7161EF;
+    }
+    .bg-gradient{
+        background: linear-gradient(315deg, #7161EF 0%, #00ffe7 100%);
+    }
+    .slide-nav-1 {
+        animation: slideNav 0.5s ease-in-out;
+    }
+    .slide-nav-2 {
+        animation: slideNav 0.6s ease-in-out;
+    }
+    .slide-nav-3 {
+        animation: slideNav 0.7s ease-in-out;
+    }
+    .slide-nav-4 {
+        animation: slideNav 0.8s ease-in-out;
+    }
+    .slide-nav-5 {
+        animation: slideNav 0.9s ease-in-out;
+    }
+    .search {
+        animation: slideSearch 0.75s ease-in-out;
+    }
+    #vid-container {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .toggle-checkbox:checked {
+        @apply: right-0 border-green-400;
+        right: 0;
+        border-color: #68D391;
+    }
+    .toggle-checkbox:checked + .toggle-label {
+        @apply: bg-green-400;
+        background-color: #68D391;
+    }
+
+
+
+    @keyframes slideNavOpp{
+        0%{
+            opacity: 0;
+        }
+        50%{
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes expand {
+        0%{
+            width: 0;
+        }
+        100%{
+            width: 75%;
+        }
+    }
+
+    @keyframes slideNav{
+        0%{
+            opacity: 0;
+        }
+        50%{
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideSearch{
+        0%{
+            opacity: 0;
+        }
+        50%{
+            transform: translateX(-50px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideMe{
+        0%{
+            opacity: 0;
+        }
+        60%{
+            transform: translateX(0px);
+        }
+        62%{
+            transform: translateX(50px);
+            opacity: 0;
+        }
+        100%{
+            transform: translate(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideVid{
+        0%{
+            opacity: 0;
+        }
+        60%{
+            transform: translateX(0px);
+        }
+        62%{
+            transform: translateX(20px);
+            opacity: 0;
+        }
+        100%{
+            transform: translate(0);
+            opacity: 1;
+        }
+    }
+</style>
+
+<body class="bg-gradient min-h-screen overflow-x-hidden">
+    <div id="nav" class="w-full">
+        <div class="w-full text-gray-700 bg-discord-dark">
+          <div x-data="{ open: false }" class="flex flex-col w-5/6 px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+            <div class="p-4 flex flex-row items-center justify-between">
+                <div class="slide-nav-3 cursor-default">
+                    <img class="inline-block h-10 w-10 rounded-full bg-gradient p-1" src="../static/images/spooderfy_white_fill.png" alt="">
+                    <h1 class="px-1 inline-block text-white text-xl font-bold">Spooderfy</h1>
+                </div>
+              <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                  <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                  <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="slide-nav-5 flex justify-center hidden lg:block w-full lg:w-1/2 pb-2 lg:pt-2">
+                <div class="p-2 relative mx-auto w-full lg:w-2/3">
+                    <label>
+                        <input id="search-content" class="border-2 border-gray-300 bg-white w-full h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none placeholder-gray-600 text-discord-dark font-medium"
+                          type="search" name="search" placeholder="Search for movie packs and communities...">
+                    </label>
+                    <button v-on:click="search" type="submit" class="absolute right-0 top-0 mt-5 mr-4 focus:outline-none">
+                        <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                             version="1.1" id="Capa_1" x="0px" y="0px"
+                             viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
+                             xml:space="preserve"
+                             width="512px" height="512px">
+                        <path
+                          d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"></path>
+                      </svg>
+                    </button>
+                </div>
+            </div>
+            <nav :class="{'flex': open, 'hidden': !open}" class="flex-col pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row text-white items-center text-xl">
+                <a class="slide-nav-2 mx-4 my-2 md:my-0 font-semibold transition duration-200 border-transparent border-b-2 hover:border-white focus:outline-none focus:border-blue-400" v-bind:href="home">Home</a>
+                <a class="slide-nav-2 mx-4 my-2 md:my-0 font-semibold transition duration-200 border-transparent border-b-2 hover:border-white focus:outline-none focus:border-blue-400" v-bind:href="explore">Explore</a>
+                <a class="slide-nav-1 mx-4 my-2 md:my-0 font-semibold transition duration-200 border-transparent border-b-2 hover:border-white focus:outline-none focus:border-blue-400" v-bind:href="invite">Invite</a>
+                <a class="slide-nav-2 mx-4 my-2 md:my-0 font-semibold transition duration-200 border-transparent border-b-2 hover:border-white focus:outline-none focus:border-blue-400" v-bind:href="discord">Join Discord</a>
+            </nav>
+          </div>
+        </div>
+    </div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 100 1440 80">
+    <path fill="#23272A" fill-opacity="1" d="M0,160L60,149.3C120,139,240,117,360,128C480,139,600,181,720,181.3C840,181,960,139,1080,122.7C1200,107,1320,117,1380,122.7L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+</svg>
+
+<div class="w-full flex justify-around">
+    <div class="w-2/3 p-8">
+        <div class="bg-discord-dark bg-discord-dark rounded-lg">
+            <div id="video-system">
+                <div class="py-2 px-4">
+                    <div class="w-full flex justify-center items-center">
+                        <div v-if="admin" class="w-1/6 px-4">
+                            <svg v-if="isPlaylist" onclick="videoInfo.onMovePrevious()" class="float-left w-10 h-10 text-white hover:text-red-500 transition duration-200 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0019 16V8a1 1 0 00-1.6-.8l-5.333 4zM4.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0011 16V8a1 1 0 00-1.6-.8l-5.334 4z" />
+                            </svg>
+                        </div>
+
+                        <div class="w-2/3 flex justify-center pb-3">
+                            <div class="">
+                                <a class="text-center inline-block text-xl font-bold cursor-pointer border-b-2 border-transparent transition duration-200 ml-6 pt-4 text-spoods-purple border-transparent border-spoods-purple-hover" v-text="playlistName" v-bind:href="playlistUrl"></a>
+                                <h1 class="text-center inline-block text-xl font-bold text-white px-1">|</h1>
+                                <h1 class="text-center inline-block text-xl font-bold text-white" v-text="videoName"></h1>
+                            </div>
+                        </div>
+
+                        <div v-if="admin" class="w-1/6 px-4">
+                            <svg v-if="isPlaylist" onclick="videoInfo.onMoveNext()" class="float-right w-10 h-10 text-white hover:text-red-500 transition duration-200 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="w-full pb-4 px-4">
+                        <div class="pt-1 w-full bg-white rounded-full"></div>
+                    </div>
+                </div>
+
+                <div id="vid-container" class="video-container self-center w-full px-4 flex justify-center">
+                    <video
+                        id="my-video"
+                        class="self-center rounded"
+                        controls
+                        height="100%"
+                        width="100%"
+                        preload="auto"
+                      >
+                        <source v-bind:src="currentVideoUrl" type=""/>
+                        <p class="vjs-no-js">
+                          To view this video please enable JavaScript, and consider upgrading to a
+                          web browser that
+                          <a href="https://videojs.com/html5-video-support/" target="_blank">
+                              supports HTML5 video
+                          </a>
+                        </p>
+                    </video>
+                </div>
+            </div>
+
+            <div id="panel" class="h-12">
+                <div v-if="admin" class="float-right w-auto mx-4 my-2 flex">
+                    <div onclick="videoInfo.toggleAllowMembers()" class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in-out">
+                        <input  type="checkbox" name="toggle" id="member-control" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-red-500 appearance-none cursor-pointer"/>
+                        <label  for="member-control" class="toggle-label block overflow-hidden h-6 rounded-full bg-red-500 cursor-pointer"></label>
+                    </div>
+                    <label for="member-control" class="text-lg text-white font-semibold">Give Members Control</label>
+                </div>
+
+                <div class="float-left w-auto mx-6 my-2 flex items-center">
+                    <div v-if="isSaved" onclick="videoInfo.onLike()" class="flex items-center px-1">
+                         <div class="w-6 h-6 text-green-400 cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                            </svg>
+                         </div>
+                    </div>
+                    <div class="flex items-center px-2">
+                        <div v-if="isSaved" onclick="videoInfo.onDislike()" class="w-6 h-6 text-red-700 cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.096c.5 0 .905-.405.905-.904 0-.715.211-1.413.608-2.008L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="px-4">
+                        <div v-if="isSaved" onclick="videoInfo.onFavourite()" class="flex items-center cursor-pointer">
+                            <div class="w-6 h-6 text-red-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </div>
+                            <h1 class="text-white font-semibold text-lg pl-1">Favourite</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="w-1/3 p-2">
+        <div class="w-full h-full min-h-full min-w-full p-4">
+            <div id="room-chat" class="bg-discord-dark rounded-lg w-full h-full relative" style="height: 100%;">
+                <div class="absolute top-0 overflow-y-auto w-full" style="max-height: 34vw">
+                    <div v-for="message in messages" class="px-4 pt-2">
+                            <div class="relative py-2">
+                                <img class="inline-block absolute rounded-full object-contain w-12 h-12 mt-1"
+                                     v-bind:src="message.avatar" alt="Skull">
+                                <div class="inline-block relative ml-16 mt-1">
+                                    <div class="top-0 left-0">
+                                        <div>
+                                            <h3 class="inline-block font-semibold text-lg text-blue-400">{{ message.user }}</h3>
+                                            <p class="inline-block font-sm text-sm text-gray-600 pl-2">{{ message.timestamp }}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-white text-md">
+                                                {{ message.content }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+
+                <div class="absolute bottom-0 w-full mb-6 h-12 px-2 pb-2 rounded-lg bg-discord-dark">
+                    <div class="p-2 relative w-full">
+                        <label>
+                            <input id="text-box"
+                                   v-on:keypress="onTyping"
+                                   class="border-2 text-white border-gray-900 bg-gray-800 w-full h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none placeholder-gray-200 font-medium"
+                                   type="text"
+                                   name="message"
+                                   placeholder="Send something to the movie room...">
+                        </label>
+                        <button v-on:click="onTypingSubmit" type="submit" class="absolute right-0 top-0 my-4 mr-4 focus:outline-none text-spoods-cyan transition duration-200 transform ease-in-out" onclick="this.classList.add('rotate-45');setTimeout(()=>{this.classList.remove('rotate-45');this.classList.add('-rotate-45');}, 300);setTimeout(()=>{this.classList.remove('-rotate-45');}, 500)">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    const navControl = new Vue({
+        el: "#nav",
+        data: {
+            home: "https://" + document.location.host + "/home",
+            explore: "https://" + document.location.host + "/explore",
+            invite: "",
+            discord: "",
+        },
+        methods:
+            {
+                search: function (event) {
+                    let content = document.getElementById("search-content").value;
+                    let url = window.location.host;
+                    document.location.href = "https://" + url.concat("/explore?terms=", content);
+                }
+            },
+        created: function() { },
+    })
+
+    const API_URL = "https://" + document.location.host +"/api";
+
+    const videoInfo = new Vue({
+        el: "#video-system",
+        data: {
+            admin: true,
+            allowMembers: false,  // only valid if admin=true
+            isPlaylist: false,
+            isFavourite: false,
+            isSaved: false,
+            isLiked: false,
+            isDisliked: false,
+            videoId: '9124121234521',
+            playlistName: "ChillFish8's Playlist",
+            playlistUrl: "#",   // todo add this
+            videoName: "Greek Fire - A Real Life",
+            currentVideoUrl: "",
+            playlistVideos: [],
+        },
+        methods: {
+            toggleAllowMembers: function (event) {
+                alert("hello world!!")
+            },
+            onFavourite: function (event) {  // todo post request
+                const requestOptions = {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                };
+                if (this.isFavourite) {
+                    fetch(API_URL+"/packs/"+this.videoId+"/favourite/remove", requestOptions)
+                } else {
+                    fetch(API_URL+"/packs/"+this.videoId+"/favourite/add", requestOptions)
+                }
+
+            },
+            onLike: function (event) {  // todo post request
+                let requestOptions;
+                if (this.isLiked) {
+                    requestOptions = {
+                        method: "DELETE",
+                        headers: { "Content-Type": "application/json" },
+                    };
+                } else {
+                    requestOptions = {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                    };
+                }
+
+                fetch(API_URL+"/packs/"+this.videoId+"/like", requestOptions)
+            },
+            onDislike: function (event) {   // todo post request
+                let requestOptions;
+                if (this.isDisliked) {
+                    requestOptions = {
+                        method: "DELETE",
+                        headers: { "Content-Type": "application/json" },
+                    };
+                } else {
+                    requestOptions = {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                    };
+                }
+
+                fetch(API_URL+"/packs/"+this.videoId+"/dislike", requestOptions)
+            },
+            onMovePrevious: function (event) {  // todo WS
+                if (!this.isPlaylist) { return; }
+
+
+            },
+            onMoveNext: function (event) {  // todo WS
+                if (!this.isPlaylist) { return; }
+
+
+            }
+        },
+        created: function() { },
+    })
+
+
+    const roomChat = new Vue({
+        el: "#room-chat",
+        data: {
+            admin: true,
+            messages: [
+                {
+                    user: "SkullBite",
+                    avatar: "https://cdn.discordapp.com/avatars/158750488563679232/f6ab6a01d9dff765a0603ba891396c5f.webp?size=128",
+                    timestamp: "Today at 10:09 PM",
+                    content: "Lets go!"
+                },
+                {
+                    user: "ChillFish8",
+                    avatar: "https://cdn.discordapp.com/avatars/290923752475066368/4921a5665c5320be55559d1a026fca68.webp?size=128",
+                    timestamp: "Today at 10:10 PM",
+                    content: "Hello from Discord! 👋 Did you know anything sent here goes straight to the room?"
+                },
+                {
+                    user: "SkullBite",
+                    avatar: "https://cdn.discordapp.com/avatars/158750488563679232/f6ab6a01d9dff765a0603ba891396c5f.webp?size=128",
+                    timestamp: "Today at 10:10 PM",
+                    content: "Did you know you can give members control of seeking to parts of the video as well as just yourself?"
+                },
+                {
+                    user: "ChillFish8",
+                    avatar: "https://cdn.discordapp.com/avatars/290923752475066368/4921a5665c5320be55559d1a026fca68.webp?size=128",
+                    timestamp: "Today at 10:11 PM",
+                    content: "Did you say these players are in sync!?"
+                },
+                {
+                    user: "SkullBite",
+                    avatar: "https://cdn.discordapp.com/avatars/158750488563679232/f6ab6a01d9dff765a0603ba891396c5f.webp?size=128",
+                    timestamp: "Today at 10:12 PM",
+                    content: "Hell yeah! All users in complete sync, no more dealing with Discord's laggy streams!"
+                },
+            ]
+        },
+        methods:
+            {
+                onTyping: function (event) {
+                    if(event.keyCode === 13){
+                        this.onTypingSubmit()
+                        event.preventDefault();
+                    }
+                },
+                onTypingSubmit: function (event) {
+                    let elm = document.getElementById("text-box");
+                    if (elm.value !== "") {
+
+                    }
+                    elm.value = ""
+                },
+                addMessage: function (msg) {
+                    this.messages.push(msg);
+                },
+            },
+        created: function() {
+            this.playlistName = "bob";
+        },
+    })
+
+
+</script>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spooderfy | Home</title>
+	<meta content="#6C63FF" name="theme-color">
+    <meta content="https://images.discordapp.net/avatars/585225058683977750/635dfb482c9eb8aad28d4a8f64a7508a.png?size=512" property="og:image">
+    <meta content="Create movie nights like never before with Spooderfy."
+          name="description">
+
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" type="text/css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<style>
+    body {
+        font-family: Inter var, system-ui, -apple-system, BlinkMacSystemFont,
+                         Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+                         Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        background-color: #161a29;
+    }
+	.top {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    .text-not-as-dart {
+        color: #2C2F33;
+    }
+	.bg-discord-dark {
+		background: #23272A;
+    }
+    .text-discord-dark {
+        color: #23272A;
+    }
+    .border-discord-dark {
+        border-color: #23272A;
+    }
+    .bg-gradient{
+        background: linear-gradient(315deg, #7161EF 0%, #00ffe7 100%);
+    }
+    .shadow-sharp {
+       -webkit-box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.75);
+        box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.75);
+    }
+
+    .slidein-1 {
+        animation: slideMe 1.4s ease-in-out;
+    }
+    video {
+        animation: slideVid 1.4s ease-in-out;
+    }
+    .search {
+        animation: slideSearch 0.75s ease-in-out;
+    }
+    .slide-nav-1 {
+        animation: slideNav 0.5s ease-in-out;
+    }
+    .slide-nav-2 {
+        animation: slideNav 0.6s ease-in-out;
+    }
+    .slide-nav-3 {
+        animation: slideNav 0.7s ease-in-out;
+    }
+    .slide-nav-4 {
+        animation: slideNav 0.8s ease-in-out;
+    }
+    .slide-nav-5 {
+        animation: slideNav 0.9s ease-in-out;
+    }
+    .animate-expand {
+        width: 75%;
+        animation: expand 1s ease-in-out;
+    }
+    .animate-rise-up {
+        animation: slideNavOpp 1.6s ease-in-out;
+    }
+    .animate-rise-down {
+        animation: slideNav 2s ease-in-out;
+    }
+
+    @keyframes slideNavOpp{
+        0%{
+            opacity: 0;
+        }
+        50%{
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes expand {
+        0%{
+            width: 0;
+        }
+        100%{
+            width: 75%;
+        }
+    }
+
+    @keyframes slideNav{
+        0%{
+            opacity: 0;
+        }
+        50%{
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideSearch{
+        0%{
+            opacity: 0;
+        }
+        50%{
+            transform: translateX(-50px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideMe{
+        0%{
+            opacity: 0;
+        }
+        60%{
+            transform: translateX(0px);
+        }
+        62%{
+            transform: translateX(50px);
+            opacity: 0;
+        }
+        100%{
+            transform: translate(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideVid{
+        0%{
+            opacity: 0;
+        }
+        60%{
+            transform: translateX(0px);
+        }
+        62%{
+            transform: translateX(20px);
+            opacity: 0;
+        }
+        100%{
+            transform: translate(0);
+            opacity: 1;
+        }
+    }
+</style>
+<body class="bg-transparent min-h-screen">
+<div class="overflow-x-hidden">
+
+<div class="w-full">
+    <div class="w-full cursor-default my-16">
+        <div class="w-full flex justify-center">
+            <div class="w-full lg:w-2/3 px-4">
+                <h2 class="block text-5xl font-bold text-center animate-rise-up">
+                    The next level of Discord movie nights.
+                </h2>
+                <div class="w-full flex justify-center pt-5">
+                    <div class="animate-expand rounded-full bg-white pt-1"></div>
+                </div>
+                <div class="w-full flex justify-center pt-5">
+                    <p class="block text-2xl font-semibold text-not-as-dart text-center w-5/6 animate-rise-down">
+                        Watch videos linked by you or others in perfect sync all while send messages to and from
+                        Discord straight from your movie room, explore this and much more by inviting Spooderfy now!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-full h-full flex items-center py-8">
+    <div class="w-full lg:w-2/3 flex justify-center py-4 px-8 lg:px-0 float-right">
+            <div class="w-full lg:w-2/3 p-4 rounded-lg" style="background: #2C2F33;">
+                <div class="relative pb-2">
+                    <img class="inline-block absolute rounded-full object-contain w-12 h-12 mt-1"
+                         src="https://spooderfy.com/static/images/users/cf.webp" alt="CF">
+                    <div class="inline-block relative ml-16 mt-1">
+                        <div class="top-0 left-0">
+                            <div>
+                                <h3 class="inline-block font-semibold text-lg text-blue-400">ハーリさん (CF8)</h3>
+                                <p class="inline-block font-sm text-sm text-gray-600 pl-2">Today at 1:57 PM</p>
+                            </div>
+                            <div>
+                                <div class="text-white text-md">
+                                    Hey, <span class="rounded" style="color: #7289DA;background: rgba(114, 137, 218, 0.10);">@Skullbite</span>
+                                    want to watch Weathering with you? Heard it's hype!
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative py-4">
+                    <img class="inline-block absolute rounded-full object-contain w-12 h-12 mt-1"
+                         src="https://spooderfy.com/static/images/users/skull.webp" alt="Skull">
+                    <div class="inline-block relative ml-16 mt-1">
+                        <div class="top-0 left-0">
+                            <div>
+                                <h3 class="inline-block font-semibold text-lg text-blue-400">Skullbite</h3>
+                                <p class="inline-block font-sm text-sm text-gray-600 pl-2">Today at 1:58 PM</p>
+                            </div>
+                            <div>
+                                <div class="text-white text-md">
+                                    Sure lets go!<br>
+                                    sp!createroom Weathering With You
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative py-4 w-full">
+                    <img class="inline-block absolute rounded-full object-contain w-12 h-12 p-1 mt-1 bg-gradient"
+                         src="https://spooderfy.com/static/images/spooderfy_white_fill.png" alt="Spoods">
+                    <div class="inline-block relative ml-16 mt-1 w-9/12">
+                        <div class="top-0 left-0">
+                            <div class="flex justify-start">
+                                <h3 class="inline-block font-semibold text-lg text-blue-400">Spooderfy</h3>
+                                <p class="inline-block font-sm text-sm text-gray-600 pl-4 pt-1">Today at 1:58 PM</p>
+                            </div>
+                            <div class="w-full h-48 bg-discord-dark rounded border-l-4 border-blue-400 shadow-sharp">
+                                <div class="p-4 relative w-full h-full">
+                                    <div class="flex absolute top-0 left-0 ml-4 mt-3 w-full">
+                                        <img class="rounded-full object-contain w-8 h-8 mt-1"
+                                             src="https://spooderfy.com/static/images/users/skull.webp"
+                                             alt="">
+                                        <h1 class="self-center pl-2 text-white font-semibold text-md lg:text-lg hover:underline cursor-pointer">Room Created! - Click to Join</h1>
+                                    </div>
+                                    <div class="flex absolute bottom-0 left-0 w-11/12 mb-2 ml-4 transform scale-75 lg:scale-100">
+                                        <div class="h-32 w-full py-2">
+                                            <div class="h-full w-full rounded flex justify-around">
+                                                <img class="h-24 w-24 inline-block "
+                                                     src="https://spooderfy.com/static/images/spooderfy_white_fill.png" alt="">
+                                                <div class="inline-block">
+                                                    <p class="absolute font-bold text-white">
+                                                       Your room code is:
+                                                    </p>
+                                                    <h1 class="text-6xl font-bold text-blue-400">
+                                                       GY8X4
+                                                    </h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full lg:w-1/2 cursor-default">
+            <div class="w-full h-full min-h-full flex justify-start items-center">
+                <div class="w-3/4 px-4">
+                    <h1 class="text-white font-bold text-5xl">Create and Enjoy</h1>
+                        <p class="block text-2xl font-semibold text-discord-dark">
+                            Create a voice channel, linked text channel and movie room all with
+                            a single command.
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-full h-full flex items-center py-8">
+    <div class="w-full lg:w-1/2 cursor-default">
+        <div class="w-full h-full min-h-full flex justify-end items-center">
+            <div class="w-3/4 px-4">
+                <h1 class="text-white font-bold text-5xl">Seemless Chatting</h1>
+                <p class="block text-2xl font-semibold text-discord-dark">
+                    All movie rooms come with Discord integration inbuilt,
+                    as part of the movie room text channels, send messages to and
+                    from Discord and the room seemlessly.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="w-full lg:w-2/3 flex justify-center py-4 px-8 lg:px-0 float-right">
+        <div class="w-full lg:w-2/3 p-1 rounded-lg bg-white transform lg:scale-110">
+            <img src="https://spooderfy.com/static/images/examples/movie_screen.PNG" alt="">
+        </div>
+    </div>
+</div>
+<div class="w-full h-full flex items-center py-8">
+    <div class="w-full lg:w-2/3 flex justify-center py-4 px-8 lg:px-0 float-right">
+        <div class="w-full lg:w-2/3 p-1 rounded-lg bg-white transform lg:scale-110">
+                <img src="https://spooderfy.com/static/images/examples/explore_screen.png" alt="">
+        </div>
+    </div>
+    <div class="w-full lg:w-1/2 cursor-default">
+        <div class="w-full h-full min-h-full flex justify-start items-center">
+            <div class="w-3/4 px-4">
+                <h1 class="text-white font-bold text-5xl">Explore and Build Community's</h1>
+                <p class="block text-2xl font-semibold text-discord-dark">
+                    Explore everything from Discord communities to videos and playlists that others have added.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

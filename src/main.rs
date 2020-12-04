@@ -46,7 +46,6 @@ fn get_config() -> ServerConfig {
     let config: ServerConfig = serde_json::from_str(&config)
         .expect("could not parse json");
 
-
     config
 }
 

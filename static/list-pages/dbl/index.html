@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(315deg, #7161EF 0%, #00ffe7 100%) fixed !important;
+        }
+        .text-not-as-dart {
+            color: #2C2F33;
+        }
+        .bg-discord-dark {
+            background: #23272A;
+        }
+        .text-discord-dark {
+            color: #23272A;
+        }
+        .border-discord-dark {
+            border-color: #23272A;
+        }
+            #bot-details-page {
+            padding-top: 64px !important;
+        }
+        .content {
+            padding: 0 !important;
+        }
+        .owners {
+            display: none;
+        }
+        .content, .unhide, .container {
+            visibility: visible;
+        }
+        .bg-gradient {
+            background: linear-gradient(315deg, #7161EF 0%, #00ffe7 100%);
+        }
+        .dark {
+            background: #2C2F33;
+        }
+      	.comment-section-parent textarea {
+        	background: #2C2F33;
+      		color: #FFFFFF;
+      	}
+        .orange {
+            color: #E1542A;
+        }
+        .container.is-widescreen {
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+        .longdescription {
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+        .content {
+            box-shadow: none !important;
+            background: transparent !important;
+        }
+        /* Timos edit */
+        #bot-details-page #details .container {
+            border: initial;
+        }
+        #bot-img, #bot-info, .left-container, .bot-tags-title, #tags {
+            display: none;
+        }
+        .wrapper-page > div:nth-child(6) {
+            position: static;
+        }
+        .wrapper-page > div:nth-child(6) > div:nth-child(3) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .bottomAdSpacer {
+            padding-bottom: 5%;
+        }
+        #bot-stats {
+            margin: 0 auto;
+            overflow: hidden;
+            max-width: 350px;
+            position: absolute;
+            top: 300px;
+            z-index: 50;
+        }
+        #bot-details-page #details .container {
+            border: none !important;
+        }
+      	.force-text-white {
+			color: white !important;
+        }
+      	.text-white {
+            color: white !important;
+        }
+      .border-2 {
+      	border-width: 3px;
+      }
+      .border-r-2 {
+      	border-right-width: 3px;
+      }
+      #bot-rating {
+      	display: flex;
+      	align-items: center;
+      	width: 16rem;
+      }
+      .comment-header {
+      	display: flex;
+      	align-items: center;
+      }
+      .current-score {
+      	padding-left: 1rem !important;
+      	padding-right: 1rem !important;
+      }
+      span.selectable {
+      	display: inline-block;
+      }
+      p.ml-3:nth-child(5), .comment-header > h2:nth-child(1) {
+      	color: #FFFFFF !important;
+      }
+      .star svg .svg-star {
+          fill: #FFCC33 !important;
+      }
+      p.ml-3:nth-child(5) {
+      	font-weight: 700;
+      	font-size: 1.125rem;
+      }
+      .dashboard__input, .dashboard__input-fake {
+          font-family: "Karla",sans-serif;
+          color: var(--text);
+          border: var(--border-subtle);
+          font-size: 16px;
+          background: var(--input-background);
+          border: none;
+      }
+      .level-right {
+      	padding: .5rem !important;
+      }
+      .comment-header > h2:nth-child(1) {
+      	align-self: center;
+      }
+      .current-score, .total-score, p.mb-0 {
+      	color: #FFFFFF;
+      }
+      span.comment-stars-parent:nth-child(2) {
+      	display: flex;
+      }
+      p.mb-0 {
+         font-size: 1.125rem;
+      }
+    .wrapper-page > div:nth-child(5) > div:nth-child(5), .wrapper-page > div:nth-child(5) {
+        max-width: none;
+        min-width: 100%;
+    }
+    </style>
+</head>
+<div class="content leading-normal tracking-normal text-white h-auto w-full"
+     style="font-family: 'Source Sans Pro', sans-serif;">
+    <div class="pt-4">
+        <a class="cursor-pointer font-medium rounded-lg bg-red-700 hover:bg-red-900 px-2 py-1">
+            Report
+        </a>
+    </div>
+    <div class="pt-16">
+        <div class="lg:flex justify-around transform scale-100 lg:scale-125 py-8">
+            <div class="flex justify-center">
+                <img class="h-64 object-contain p-2 bg-discord-dark rounded-full border-2 border-white"
+                     src="https://spooderfy.com/static/images/spooderfy_white_fill.png"
+                     alt="">
+            </div>
+        </div>
+        <h1 class="block text-center text-white font-bold text-6xl transform scale-100 lg:scale-125 py-4"
+            style="color: white !important; font-weight: bold !important; font-size: 4rem !important;">
+            Spooderfy
+        </h1>
+        <div class="slide-nav-5 w-full flex justify-center">
+            <div class="pt-1 w-1/2 bg-white rounded-full"></div>
+        </div>
+        <p class="text-center font-semibold py-4 text-2xl force-text-white">
+            Experience Discord movie nights like never before (In Development)
+        </p>
+        <div class="block flex justify-center z-30 py-8 transform scale-100 lg:scale-125">
+            <div class="static px-4">
+                <div class="relative rounded-lg border-b-2 border-r-2">
+                    <a class="inline-block cursor-pointer text-4xl text-white font-semibold border-2 rounded-lg border-white px-4 items-center transform -translate-x-1 -translate-y-1 hover:translate-y-0 hover:translate-x-0 transition ease-linear duration-100"
+                       href="https://discordapp.com/oauth2/authorize?client_id=656598065532239892&scope=bot&permissions=8"
+                       style="color: white !important;">
+                        <img src="https://crunchy-bot.live/static//images/Discord-Logo-White.svg" alt=""
+                             class="hidden lg:inline-block w-10 h-10 object-contain">
+                        Invite
+                    </a>
+                </div>
+            </div>
+            <div class="static px-4">
+                <div class="relative rounded-lg border-b-2 border-r-2">
+                    <a class="inline-block cursor-pointer text-4xl text-white font-semibold border-2 rounded-lg border-white px-4 items-center transform -translate-x-1 -translate-y-1 hover:translate-y-0 hover:translate-x-0 transition ease-linear duration-100"
+                       href="https://spooderfy.com/home"
+                       style="color: white !important;">
+                        Website
+                        <svg class="inline-block w-10 h-10 object-contain" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="static px-4">
+                <div class="relative rounded-lg border-b-2 border-r-2">
+                    <a class="inline-block cursor-pointer text-4xl text-white font-semibold border-2 rounded-lg border-white px-4 items-center transform -translate-x-1 -translate-y-1 hover:translate-y-0 hover:translate-x-0 transition ease-linear duration-100"
+                       href="https://top.gg/bot/585225058683977750/vote"
+                       style="color: white !important;">
+                        Vote
+                        <svg class="inline-block w-10 h-10 object-contain" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="block flex justify-center z-50 py-4 pb-24 transform scale-100 lg:scale-125">
+            <div class="static px-4">
+                <div class="relative">
+                    <a class="inline-block cursor-default text-xl text-white font-semibold border-2 rounded-lg border-white px-4 py-2 items-center"
+                       style="color: white !important;">
+                        Prefix: sp!
+                    </a>
+                </div>
+            </div>
+            <div class="static px-4">
+                <div class="relative">
+                    <a class="inline-block cursor-pointer text-xl text-white font-semibold border-2 rounded-lg border-white px-4 py-2 items-center"
+                       href="https://discord.gg/Pvgd4NAspa"
+                       style="color: white !important;">
+                        Support Server
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  	<div class="block w-full py-10 my-8 min-h-screen" style="min-height: 1900px !important;">
+        <iframe
+                src="https://spooderfy.com/static/list-pages/dbl/dummy_home.html"
+                class="w-full min-h-screen"
+                style="min-height: 1900px !important;height: 1900px !important;"
+                allowfullscreen="true"
+                allowtransparency="true"
+        ></iframe>
+    </div>
+</div>
+</html>
