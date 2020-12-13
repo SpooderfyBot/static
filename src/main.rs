@@ -17,6 +17,9 @@ async fn main() {
     let home2 = warp::path("home")
         .and(warp::fs::file(config.home_dir));
 
+    let home2 = warp::path("room")
+        .and(warp::fs::file(config.room_dir));
+
     let static_files = warp::path("static")
         .and(warp::fs::dir(config.static_file_dir));
 
