@@ -1,6 +1,5 @@
 {
   "server_host": "0.0.0.0:5052",
   "static_file_dir": "./static",
-  "home_dir": "./templates/home.html",
-  "room_dir": "./templates/room_test.html"
+  "home_dir": "./templates/home.html"
 }
