@@ -52,4 +52,5 @@ struct ServerConfig {
     server_host: String,
     static_file_dir: String,
     home_dir: String,
+    room_dir: String,
 }
