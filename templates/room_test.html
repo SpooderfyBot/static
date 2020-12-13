@@ -118,24 +118,12 @@
     const API_URL = BASE_URL + "/api";
     const WS_URL = "wss://" + BASE_HOST + "/gateway";
 
-    const USER_INFO = API_URL + "/users/@me";
+    const REMOVE_URL = BASE_URL + "/room/"
 
-    function getSelf() {
-      let http = new XMLHttpRequest();
+    let roomId = document.location.href.replace(REMOVE_URL, "");
+    console.log(roomId)
 
-      http.open("GET", USER_INFO, false);
-      http.send(null);
-
-      let userInfo = JSON.parse(http.responseText);
-
-      if (!userInfo.exists) {
-        alert("You do not have a valid session.");
-      }
-
-      return userInfo
-    }
-
-    function wsConnect(roomId, sessionId) {
+    function wsConnect(roomId) {
       return new WebSocket(`${WS_URL}?id=${roomId}`)
     }
 
