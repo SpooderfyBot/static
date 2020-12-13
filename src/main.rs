@@ -17,9 +17,6 @@ async fn main() {
     let home2 = warp::path("home")
         .and(warp::fs::file(config.home_dir));
 
-    let room = warp::path("room")
-        .and(warp::fs::file(config.room_dir));
-
     let static_files = warp::path("static")
         .and(warp::fs::dir(config.static_file_dir));
 
@@ -35,8 +32,7 @@ async fn main() {
 
     let routes = home
         .or(home2)
-        .or(static_files)
-        .or(room);
+        .or(static_files);
 
     warp::serve(routes).run(server).await;
 }
@@ -55,5 +51,4 @@ struct ServerConfig {
     server_host: String,
     static_file_dir: String,
     home_dir: String,
-    room_dir: String,
 }
