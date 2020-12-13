@@ -136,7 +136,7 @@
     }
 
     function wsConnect(roomId, sessionId) {
-      return new WebSocket(`${WS_URL}?id=${roomId}&session=${sessionId}`)
+      return new WebSocket(`${WS_URL}?id=${roomId}`)
     }
 
     const video = document.getElementById("video");
