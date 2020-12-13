@@ -17,7 +17,7 @@ async fn main() {
     let home2 = warp::path("home")
         .and(warp::fs::file(config.home_dir));
 
-    let home2 = warp::path("room")
+    let room = warp::path("room")
         .and(warp::fs::file(config.room_dir));
 
     let static_files = warp::path("static")
@@ -33,7 +33,10 @@ async fn main() {
         .parse()
         .expect("Unable to parse socket address");
 
-    let routes = home.or(home2).or(static_files);
+    let routes = home
+        .or(home2)
+        .or(static_files)
+        .or(room);
 
     warp::serve(routes).run(server).await;
 }
