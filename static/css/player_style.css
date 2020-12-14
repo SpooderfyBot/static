@@ -207,7 +207,7 @@ button:hover::before {
   opacity: 0;
 }
 
-input[type=range] {
+.vid-input[type=range] {
   -webkit-appearance: none;
   -moz-appearance: none;
   height: 8.4px;
@@ -215,11 +215,11 @@ input[type=range] {
   cursor: pointer;
 }
 
-input[type=range]:focus {
+.vid-input[type=range]:focus {
   outline: none;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
+.vid-input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   cursor: pointer;
   border-radius: 1.3px;
@@ -227,7 +227,7 @@ input[type=range]::-webkit-slider-runnable-track {
   transition: all 0.4s ease;
 }
 
-input[type=range]::-webkit-slider-thumb {
+.vid-input[type=range]::-webkit-slider-thumb {
   height: 16px;
   width: 16px;
   border-radius: 16px;
@@ -285,11 +285,7 @@ input[type=range].volume::-moz-range-thumb {
   background: #fff;
 }
 
-.hidden {
-  display: none;
-}
-
-svg {
+.vid-svg {
   width: 28px;
   height: 28px;
   fill: #fff;
