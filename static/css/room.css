@@ -1,0 +1,161 @@
+body {
+    font-family: Inter var, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    background-color: #161a29;
+}
+
+.bg-discord-dark {
+    background: #23272A;
+}
+
+.bg-discord-no-as-dark {
+    background: #2F3641;
+}
+
+.border-discord-dark {
+    border-color: #23272A;
+}
+
+.text-spoods-cyan {
+    color: #00ffe7;
+}
+
+.text-spoods-purple {
+    color: #7161EF;
+}
+
+.border-spoods-purple-hover:hover {
+    border-color: #7161EF;
+}
+
+.bg-gradient {
+    background: linear-gradient(315deg, #7161EF 0%, #00ffe7 100%);
+}
+
+.slide-nav-1 {
+    animation: slideNav 0.5s ease-in-out;
+}
+
+.slide-nav-2 {
+    animation: slideNav 0.6s ease-in-out;
+}
+
+.slide-nav-3 {
+    animation: slideNav 0.7s ease-in-out;
+}
+
+.slide-nav-4 {
+    animation: slideNav 0.8s ease-in-out;
+}
+
+.slide-nav-5 {
+    animation: slideNav 0.9s ease-in-out;
+}
+
+.search {
+    animation: slideSearch 0.75s ease-in-out;
+}
+
+#vid-container {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.toggle-checkbox:checked {
+    @apply: right-0 border-green-400;
+    right: 0;
+    border-color: #68D391;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+    @apply: bg-green-400;
+    background-color: #68D391;
+}
+
+
+@keyframes slideNavOpp {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes expand {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 75%;
+    }
+}
+
+@keyframes slideNav {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideSearch {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideMe {
+    0% {
+        opacity: 0;
+    }
+    60% {
+        transform: translateX(0px);
+    }
+    62% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideVid {
+    0% {
+        opacity: 0;
+    }
+    60% {
+        transform: translateX(0px);
+    }
+    62% {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
