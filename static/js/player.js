@@ -24,7 +24,6 @@ function loadVideo() {
     if (videoWorks) {
         video.controls = false
         videoControls.classList.remove('hidden');
-        initializeVideo();
     }
 
     function togglePlay() {
@@ -232,7 +231,7 @@ function loadVideo() {
 
     video.addEventListener('play', updatePlayButton);
     video.addEventListener('pause', updatePlayButton);
-    video.addEventListener('loadedmetadata', initializeVideo);
+    video.addEventListener('canplay', initializeVideo);
     video.addEventListener('timeupdate', updateTimeElapsed);
     video.addEventListener('timeupdate', updateProgress);
     video.addEventListener('volumechange', updateVolumeIcon);
