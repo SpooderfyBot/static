@@ -22,6 +22,7 @@ function loadVideo() {
 
     const videoWorks = !!document.createElement('video').canPlayType;
     if (videoWorks) {
+        console.log("its playable!")
         video.controls = false
         videoControls.classList.remove('hidden');
     }
