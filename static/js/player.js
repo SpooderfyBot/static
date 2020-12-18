@@ -1,4 +1,4 @@
-function loadVideo() {
+//function loadVideo() {
     const video = document.getElementById('video');
     const videoControls = document.getElementById('video-controls');
     const playButton = document.getElementById('play');
@@ -263,4 +263,4 @@ function loadVideo() {
     });
     document.addEventListener('keyup', keyboardShortcuts);
 
-}
+//}
