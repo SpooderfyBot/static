@@ -231,7 +231,7 @@ function loadVideo() {
 
     video.addEventListener('play', updatePlayButton);
     video.addEventListener('pause', updatePlayButton);
-    video.addEventListener('canplay', initializeVideo);
+    video.addEventListener('durationchange', initializeVideo);
     video.addEventListener('timeupdate', updateTimeElapsed);
     video.addEventListener('timeupdate', updateProgress);
     video.addEventListener('volumechange', updateVolumeIcon);
