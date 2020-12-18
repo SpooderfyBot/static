@@ -24,6 +24,7 @@ const videoWorks = !!document.createElement('video').canPlayType;
 if (videoWorks) {
   video.controls = false
   videoControls.classList.remove('hidden');
+  initializeVideo();
 }
 
 function togglePlay() {
