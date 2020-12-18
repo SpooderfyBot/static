@@ -20,11 +20,8 @@ function loadVideo() {
     const fullscreenIcons = fullscreenButton.querySelectorAll('use');
     const pipButton = document.getElementById('pip-button')
 
-    const videoWorks = !!document.createElement('video').canPlayType;
-    if (videoWorks) {
-        video.controls = false
-        videoControls.classList.remove('hidden');
-    }
+    video.controls = false
+    videoControls.classList.remove('hidden');
 
     function togglePlay() {
         if (video.paused || video.ended) {
