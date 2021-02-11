@@ -1,0 +1,15 @@
+{
+  "name": "movie-room",
+  "collaborators": [
+    "Harrison Burt <57491488+ChillFish8@users.noreply.github.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "wasm_bg.wasm",
+    "wasm.js",
+    "wasm.d.ts"
+  ],
+  "module": "wasm.js",
+  "types": "wasm.d.ts",
+  "sideEffects": false
+}

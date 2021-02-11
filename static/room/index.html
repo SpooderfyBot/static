@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Spooderfy | Room</title>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <script type="module">
+            import init from "../static/wasm.js"
+            init()
+        </script>
+        <style>
+            body {
+                background: linear-gradient(315deg, #7161EF 0%, #00ffe7 100%);
+            }
+
+            .bg-discord {
+                background: #2C2F33;
+            }
+            .bg-discord-dark {
+                background: #23272A;
+            }
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 15px;
+                height: 15px;
+                outline: none;
+                border: none;
+                background: white;
+                cursor: pointer;
+                z-index: 99;
+            }
+            .slider::-moz-range-thumb {
+                width: 15px;
+                height: 15px;
+                outline: none;
+                border: none;
+                background: white;
+                cursor: pointer;
+                z-index: 99;
+            }
+            .bg-gradient{
+                background: linear-gradient(315deg, #7161EF 0%, #00ffe7 100%);
+            }
+            #player_html5_api {
+                height: 100% !important;
+                width: 100% !important;
+            }
+            #player {
+                height: 90% !important;
+            }
+            input#scrubber.scrubber, progress,.scrubber {
+                display: none !important;
+            }
+        </style>
+        <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+        <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+        <script src="https://unpkg.com/flv.js/dist/flv.min.js"></script>
+        <script src="https://unpkg.com/videojs-flvjs/dist/videojs-flvjs.min.js"></script>
+    </head>
+    <body class="min-h-screen min-w-full">
+        <div class="bg-discord-dark w-full">
+            <div x-data="{ open: false }" class="flex flex-col w-5/6 px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+                <div class="p-4 flex flex-row items-center justify-between">
+                    <div class="slide-nav-3 cursor-pointer">
+                        <img alt=""
+                             class="inline-block h-10 w-10 rounded-full bg-gradient p-1" src="https://spooderfy.com/static/images/spooderfy_white_fill.png">
+                        <h1 class="px-1 inline-block text-white text-xl font-bold">Spooderfy</h1>
+                    </div>
+                    <button @click="open = !open"
+                            class="md:hidden rounded-lg focus:outline-none focus:shadow-outline">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                            <path clip-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                                  fill-rule="evenodd"
+                                  x-show="!open"></path>
+                            <path clip-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                  fill-rule="evenodd"
+                                  style="display: none;" x-show="open"></path>
+                        </svg>
+                    </button>
+                </div>
+                <nav :class="{'flex': open, 'hidden': !open}"
+                     class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row text-white items-center text-xl">
+                    <a class="slide-nav-1 mx-4 my-2 md:my-0 font-semibold transition duration-200 border-b-2 border-white hover:border-red-500 focus:outline-none focus:border-blue-400 px-2"
+                       href="/invite">Invite</a>
+                    <a class="slide-nav-2 mx-4 my-2 md:my-0 font-semibold transition duration-200 border-transparent border-b-2 hover:border-white focus:outline-none focus:border-blue-400"
+                       href="/discord">Join Discord</a>
+                    <a class="slide-nav-3 mx-4 my-2 md:my-0 font-semibold transition duration-200 border-transparent border-b-2 hover:border-white focus:outline-none focus:border-blue-400"
+                       href="/me/servers">Server Dashboard</a>
+                    <a class="slide-nav-4 mx-4 my-2 md:my-0 font-semibold transition duration-200 border-transparent border-b-2 hover:border-white focus:outline-none focus:border-blue-400"
+                       href="/me">My Area</a>
+                </nav>
+            </div>
+        </div>
+
+        <svg viewBox="0 100 1440 80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,160L60,149.3C120,139,240,117,360,128C480,139,600,181,720,181.3C840,181,960,139,1080,122.7C1200,107,1320,117,1380,122.7L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+                  fill="#23272A"
+                  fill-opacity="1"></path>
+        </svg>
+        <div id="bodyMount">
+
+        </div>
+    </body>
+</html>
