@@ -1,4 +1,6 @@
+import { setPlayerListeners } from './snippets/movie-room-d3dbbddc3d54857c/src/js/player.js';
 import { startWs } from './snippets/movie-room-d3dbbddc3d54857c/src/websocket/js/handle_ws.js';
+import * as __wbg_star0 from './snippets/movie-room-d3dbbddc3d54857c/src/js/player.js';
 
 let wasm;
 
@@ -200,13 +202,13 @@ function makeMutClosure(arg0, arg1, dtor, f) {
     return real;
 }
 function __wbg_adapter_24(arg0, arg1) {
-    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h2f46683e3bd36839(arg0, arg1);
+    wasm.wasm_bindgen__convert__closures__invoke0_mut__ha5fd9eabdd186a25(arg0, arg1);
 }
 
 function __wbg_adapter_27(arg0, arg1, arg2) {
     var ptr0 = passStringToWasm0(arg2, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
     var len0 = WASM_VECTOR_LEN;
-    wasm._dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h67c730c65ada1486(arg0, arg1, ptr0, len0);
+    wasm.wasm_bindgen__convert__closures__invoke1_mut__h91910be4eb950f34(arg0, arg1, ptr0, len0);
 }
 
 function __wbg_adapter_30(arg0, arg1) {
@@ -292,6 +294,9 @@ async function init(input) {
     }
     const imports = {};
     imports.wbg = {};
+    imports.wbg.__wbindgen_object_drop_ref = function(arg0) {
+        takeObject(arg0);
+    };
     imports.wbg.__wbindgen_cb_drop = function(arg0) {
         const obj = takeObject(arg0).original;
         if (obj.cnt-- == 1) {
@@ -309,9 +314,6 @@ async function init(input) {
             wasm.__wbindgen_free(arg0, arg1);
         }
     };
-    imports.wbg.__wbindgen_object_drop_ref = function(arg0) {
-        takeObject(arg0);
-    };
     imports.wbg.__wbindgen_json_serialize = function(arg0, arg1) {
         const obj = getObject(arg1);
         var ret = JSON.stringify(obj === undefined ? null : obj);
@@ -319,6 +321,10 @@ async function init(input) {
         var len0 = WASM_VECTOR_LEN;
         getInt32Memory0()[arg0 / 4 + 1] = len0;
         getInt32Memory0()[arg0 / 4 + 0] = ptr0;
+    };
+    imports.wbg.__wbg_setPlayerListeners_9c4eb5c95fa564c1 = function(arg0, arg1) {
+        var ret = setPlayerListeners(getObject(arg0), getObject(arg1));
+        return ret;
     };
     imports.wbg.__wbindgen_object_clone_ref = function(arg0) {
         var ret = getObject(arg0);
@@ -640,26 +646,27 @@ async function init(input) {
         var ret = wasm.memory;
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper463 = function(arg0, arg1, arg2) {
-        var ret = makeMutClosure(arg0, arg1, 163, __wbg_adapter_24);
+    imports.wbg.__wbindgen_closure_wrapper156 = function(arg0, arg1, arg2) {
+        var ret = makeMutClosure(arg0, arg1, 11, __wbg_adapter_24);
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper465 = function(arg0, arg1, arg2) {
-        var ret = makeMutClosure(arg0, arg1, 163, __wbg_adapter_27);
+    imports.wbg.__wbindgen_closure_wrapper158 = function(arg0, arg1, arg2) {
+        var ret = makeMutClosure(arg0, arg1, 11, __wbg_adapter_27);
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper784 = function(arg0, arg1, arg2) {
-        var ret = makeMutClosure(arg0, arg1, 275, __wbg_adapter_30);
+    imports.wbg.__wbindgen_closure_wrapper786 = function(arg0, arg1, arg2) {
+        var ret = makeMutClosure(arg0, arg1, 279, __wbg_adapter_30);
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper785 = function(arg0, arg1, arg2) {
-        var ret = makeMutClosure(arg0, arg1, 275, __wbg_adapter_33);
+    imports.wbg.__wbindgen_closure_wrapper787 = function(arg0, arg1, arg2) {
+        var ret = makeMutClosure(arg0, arg1, 279, __wbg_adapter_33);
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper830 = function(arg0, arg1, arg2) {
-        var ret = makeMutClosure(arg0, arg1, 292, __wbg_adapter_36);
+    imports.wbg.__wbindgen_closure_wrapper832 = function(arg0, arg1, arg2) {
+        var ret = makeMutClosure(arg0, arg1, 296, __wbg_adapter_36);
         return addHeapObject(ret);
     };
+    imports['./snippets/movie-room-d3dbbddc3d54857c/src/js/player.js'] = __wbg_star0;
 
     if (typeof input === 'string' || (typeof Request === 'function' && input instanceof Request) || (typeof URL === 'function' && input instanceof URL)) {
         input = fetch(input);
