@@ -201,18 +201,14 @@ function makeMutClosure(arg0, arg1, dtor, f) {
 
     return real;
 }
-function __wbg_adapter_24(arg0, arg1) {
-    wasm.wasm_bindgen__convert__closures__invoke0_mut__ha5fd9eabdd186a25(arg0, arg1);
-}
-
-function __wbg_adapter_27(arg0, arg1, arg2) {
+function __wbg_adapter_24(arg0, arg1, arg2) {
     var ptr0 = passStringToWasm0(arg2, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
     var len0 = WASM_VECTOR_LEN;
-    wasm.wasm_bindgen__convert__closures__invoke1_mut__h91910be4eb950f34(arg0, arg1, ptr0, len0);
+    wasm._dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h6fb301735d34ee05(arg0, arg1, ptr0, len0);
 }
 
-function __wbg_adapter_30(arg0, arg1) {
-    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h657fd87fca0db788(arg0, arg1);
+function __wbg_adapter_27(arg0, arg1) {
+    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h2690b2befe3cc0cc(arg0, arg1);
 }
 
 let stack_pointer = 32;
@@ -222,16 +218,20 @@ function addBorrowedObject(obj) {
     heap[--stack_pointer] = obj;
     return stack_pointer;
 }
-function __wbg_adapter_33(arg0, arg1, arg2) {
+function __wbg_adapter_30(arg0, arg1, arg2) {
     try {
-        wasm._dyn_core__ops__function__FnMut___A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__hf7640a5ea7cf6555(arg0, arg1, addBorrowedObject(arg2));
+        wasm._dyn_core__ops__function__FnMut___A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__hffca2fe5e79d29b1(arg0, arg1, addBorrowedObject(arg2));
     } finally {
         heap[stack_pointer++] = undefined;
     }
 }
 
+function __wbg_adapter_33(arg0, arg1) {
+    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h64bde9c52a36fbe6(arg0, arg1);
+}
+
 function __wbg_adapter_36(arg0, arg1, arg2) {
-    wasm._dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__hd58671ec2c816fcd(arg0, arg1, addHeapObject(arg2));
+    wasm._dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h54abb30fa5538baf(arg0, arg1, addHeapObject(arg2));
 }
 
 /**
@@ -646,24 +646,24 @@ async function init(input) {
         var ret = wasm.memory;
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper156 = function(arg0, arg1, arg2) {
-        var ret = makeMutClosure(arg0, arg1, 11, __wbg_adapter_24);
-        return addHeapObject(ret);
-    };
     imports.wbg.__wbindgen_closure_wrapper158 = function(arg0, arg1, arg2) {
-        var ret = makeMutClosure(arg0, arg1, 11, __wbg_adapter_27);
+        var ret = makeMutClosure(arg0, arg1, 12, __wbg_adapter_24);
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper786 = function(arg0, arg1, arg2) {
-        var ret = makeMutClosure(arg0, arg1, 279, __wbg_adapter_30);
+    imports.wbg.__wbindgen_closure_wrapper160 = function(arg0, arg1, arg2) {
+        var ret = makeMutClosure(arg0, arg1, 12, __wbg_adapter_27);
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper787 = function(arg0, arg1, arg2) {
-        var ret = makeMutClosure(arg0, arg1, 279, __wbg_adapter_33);
+    imports.wbg.__wbindgen_closure_wrapper805 = function(arg0, arg1, arg2) {
+        var ret = makeMutClosure(arg0, arg1, 291, __wbg_adapter_30);
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper832 = function(arg0, arg1, arg2) {
-        var ret = makeMutClosure(arg0, arg1, 296, __wbg_adapter_36);
+    imports.wbg.__wbindgen_closure_wrapper806 = function(arg0, arg1, arg2) {
+        var ret = makeMutClosure(arg0, arg1, 291, __wbg_adapter_33);
+        return addHeapObject(ret);
+    };
+    imports.wbg.__wbindgen_closure_wrapper851 = function(arg0, arg1, arg2) {
+        var ret = makeMutClosure(arg0, arg1, 308, __wbg_adapter_36);
         return addHeapObject(ret);
     };
     imports['./snippets/movie-room-d3dbbddc3d54857c/src/js/player.js'] = __wbg_star0;
