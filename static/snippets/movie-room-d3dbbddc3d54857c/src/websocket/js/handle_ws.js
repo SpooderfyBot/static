@@ -8,6 +8,10 @@ export function startWs(
 ) {
     let socket = new WebSocket(url);
 
+    setInterval(() => {
+        socket.send("ping")
+    }, 5000)
+
     socket.onopen = on_open;
     socket.onclose = on_close;
     socket.onerror = on_error;
